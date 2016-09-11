@@ -2,63 +2,39 @@
 <html>
 <head>
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <script type="text/javascript" scr = "../js/index.js"></script>
     <link rel="stylesheet" type="text/css" href="../css/basic.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 </head>
 
 
-<body>
+<body onload="init();">
 
-<form NAME="hazardData">
+<!-- <form NAME="hazardData">
     <INPUT TYPE="hidden" NAME="data">
 </form>
 
-<p id="demo2"></p>
 <p id="demo"></p>
+<p id="demo2"></p>
 
-<SCRIPT LANGUAGE="javascript">
-    var locate = window.location
+<script type="text/javascript" src = "../js/index.js"></script>
+ -->
 
-    document.hazardData.data.value = locate
-
-    var text = document.hazardData.data.value
-
-    function delineate(str){
-        theleft = str.indexOf("=") + 1;
-        theright = str.lastIndexOf("&");
-        return(str.substring(theleft, theright));
-    }
-
-    var newStr = delineate(text);
-    var strSansSpace = newStr.replace(/\+/g, " ");
-    var strSansComma = strSansSpace.replace(/%2C/g, ",");
-
-    document.getElementById("demo2").innerHTML = (strSansComma);
-</script>
-
-
-
-
-<br><br>
-
-
-<SCRIPT LANGUAGE="javascript">
-var locate = window.location
-document.hazardData.data.value = locate
-
-var text = document.hazardData.data.value
-
-function delineate2(str){
-
-point = str.lastIndexOf("=");
-
-return(str.substring(point+1,str.length));
-}
-
-document.getElementById("demo").innerHTML = ("100 Answer is " +delineate2(text));
-
-</script>
+<p id="demo"></p>
+<p id="demo2"></p>
 
 </body>
+
+ <script type="text/javascript">
+   function init() {
+        // Retrieving the text input's value which was stored into localStorage
+        var question = localStorage.getItem("question");
+        var answer = localStorage.getItem("answer");
+
+        // Writing the value in the document
+        // document.write("Question Is "+ mytext);
+        document.getElementById("demo").innerHTML = (question);
+        document.getElementById("demo2").innerHTML = (answer);
+    }
+ </script>
 </html>

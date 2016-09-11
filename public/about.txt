@@ -1,0 +1,9 @@
+This is a very basic version of the Jeopardy game, meant to be used online.
+The final goal is to have a version where any layperson can come along, enter all the questions they need, then hit enter, and a jeopardy game will be generated for them.  There will be an option for teams (1-4), and a scoring system for each.
+
+Goodies to Add On:
+Animations on the cards
+
+
+Resources: 
+http://www.htmlgoodies.com/beyond/javascript/article.php/3471111

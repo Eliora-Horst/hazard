@@ -3,20 +3,33 @@
 <head>
 	<title>HAZARD</title>
 	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 	<script type="text/javascript" scr = "../js/index.js"></script>
 	<link rel="stylesheet" type="text/css" href="../css/basic.css">
 
 </head>
 <body>
+
 Category One
-	<FORM METHOD="LINK" ACTION="hazard.html">
-		100 Question<INPUT TYPE="text" NAME="Question">
-		100 Answer <INPUT TYPE="text" NAME="Answer">
+	<FORM ID = TRIAL  method = "POST" action = "hazard.html" onsubmit="tosubmit();">
+		100 Question <INPUT TYPE="text" ID ="question">
+		100 Answer <INPUT TYPE="text" ID ="answer">
 
 		<INPUT TYPE="submit" VALUE="Click and See">
 	</FORM>
 
-
 </body>
+
+ <script type="text/javascript">
+        function tosubmit() {
+            // Getting the value of your text input
+            var question = document.getElementById("question").value;
+            var answer = document.getElementById("answer").value;
+
+            // Storing the value above into localStorage
+            localStorage.setItem("question", question);
+            localStorage.setItem("answer", answer);
+
+            return true;
+        }
+ </script>
 </html>
