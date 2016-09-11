@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script type="text/javascript" scr = "../js/index.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/basic.css">
+</head>
+
+
+<body>
+
+<form NAME="hazardData">
+    <INPUT TYPE="hidden" NAME="data">
+</form>
+
+<p id="demo2"></p>
+<p id="demo"></p>
+
+<SCRIPT LANGUAGE="javascript">
+    var locate = window.location
+
+    document.hazardData.data.value = locate
+
+    var text = document.hazardData.data.value
+
+    function delineate(str){
+        theleft = str.indexOf("=") + 1;
+        theright = str.lastIndexOf("&");
+        return(str.substring(theleft, theright));
+    }
+
+    var newStr = delineate(text);
+    var strSansSpace = newStr.replace(/\+/g, " ");
+    var strSansComma = strSansSpace.replace(/%2C/g, ",");
+
+    document.getElementById("demo2").innerHTML = (strSansComma);
+</script>
+
+
+
+
+<br><br>
+
+
+<SCRIPT LANGUAGE="javascript">
+var locate = window.location
+document.hazardData.data.value = locate
+
+var text = document.hazardData.data.value
+
+function delineate2(str){
+
+point = str.lastIndexOf("=");
+
+return(str.substring(point+1,str.length));
+}
+
+document.getElementById("demo").innerHTML = ("100 Answer is " +delineate2(text));
+
+</script>
+
+</body>
+</html>
